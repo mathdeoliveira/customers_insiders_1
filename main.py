@@ -16,7 +16,7 @@ from google.cloud.aiplatform import pipeline_jobs
 
 def run_pipeline_clustering(request) -> bool:
     job = pipeline_jobs.PipelineJob(
-        display_name="ecommerce-pipeline",
+        display_name=f"{PIPELINE_NAME.replace('_', '-')}",
         template_path=f"{PIPELINE_NAME}.json",
         enable_caching=False,
     )
